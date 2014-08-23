@@ -18,18 +18,18 @@
     </modules>
     <global>
             <models>
+                <commentmarker>
+                    <class>Parassood_Commentmarker_Model</class>
+                </commentmarker>
                 <sales>
                     <rewrite>
-                        <order>Parassood_Commentmarker_Model_Order</order>
+                        <order_invoice_comment>Parassood_Commentmarker_Model_Order_Invoice_Comment</order_invoice_comment>
                     </rewrite>
                     <rewrite>
-                        <order_invoice>Parassood_Commentmarker_Model_Order_Invoice</order_invoice>
+                        <order_shipment_comment>Parassood_Commentmarker_Model_Order_Shipment_Comment</order_shipment_comment>
                     </rewrite>
                     <rewrite>
-                        <order_shipment>Parassood_Commentmarker_Model_Order_Shipment</order_shipment>
-                    </rewrite>
-                    <rewrite>
-                        <order_creditmemo>Parassood_Commentmarker_Model_Order_Creditmemo</order_creditmemo>
+                        <order_creditmemo_comment>Parassood_Commentmarker_Model_Order_Creditmemo_Comment</order_creditmemo_comment>
                     </rewrite>
                 </sales>
             </models>
@@ -43,7 +43,17 @@
         </resources>
      </global>
     <adminhtml>
-
+        <events>
+            <sales_order_status_history_save_before>
+                <observers>
+                    <admin_comment_marker>
+                        <type>singleton</type>
+                        <class>commentmarker/observer</class>
+                        <method>addAdminNameToOrderComment</method>
+                    </admin_comment_marker>
+                </observers>
+            </sales_order_status_history_save_before>
+        </events>
     </adminhtml>
     <stores>
         <admin>
