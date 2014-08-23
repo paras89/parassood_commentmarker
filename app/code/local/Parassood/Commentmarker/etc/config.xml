@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    Mage
+ * @package     Mage_Sales
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Parassood_Commentmarker>
+            <version>0.0.1</version>
+        </Parassood_Commentmarker>
+    </modules>
+    <global>
+            <models>
+                <sales>
+                    <rewrite>
+                        <order>Parassood_Commentmarker_Model_Order</order>
+                    </rewrite>
+                    <rewrite>
+                        <order_invoice>Parassood_Commentmarker_Model_Order_Invoice</order_invoice>
+                    </rewrite>
+                    <rewrite>
+                        <order_shipment>Parassood_Commentmarker_Model_Order_Shipment</order_shipment>
+                    </rewrite>
+                    <rewrite>
+                        <order_creditmemo>Parassood_Commentmarker_Model_Order_Creditmemo</order_creditmemo>
+                    </rewrite>
+                </sales>
+            </models>
+        <resources>
+            <commentmarker_setup>
+                <setup>
+                    <module>Parassood_Commentmarker</module>
+                    <class> Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </commentmarker_setup>
+        </resources>
+     </global>
+    <adminhtml>
+
+    </adminhtml>
+    <stores>
+        <admin>
+            <design>
+                <theme>
+                    <template>custom</template>
+                </theme>
+            </design>
+        </admin>
+    </stores>
+</config>

@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Parassood_Commentmarker>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Parassood_Commentmarker>
+    </modules>
+</config>
